@@ -1,65 +1,103 @@
 /* Royalti Section Styles */
-.royalti-section {
+.row {
     padding: 60px 0;
     background-color: #fff;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-.royalti-logo {
-    margin-bottom: 30px;
+.col-lg-1 {
+    width: 8.33333333%;
 }
 
-.royalti-description {
+.col-lg-2 {
+    width: 16.66666667%;
+}
+
+.col-lg-3 {
+    width: 25%;
+}
+
+.col-lg-10 {
+    width: 83.33333333%;
+}
+
+.col-lg-12 {
+    width: 100%;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.foi {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.foi:hover {
+    transform: scale(1.05);
+}
+
+.nextfootp {
     font-size: 18px;
     line-height: 1.6;
     color: #333;
     max-width: 800px;
-    margin: 0 auto 50px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.royalti-description a {
+.nextfootp a {
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.royalti-description a:hover {
+.nextfootp a:hover {
     color: #0056b3;
 }
 
-.royalti-features {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-}
-
-.feature-box {
-    flex: 1;
-    min-width: 250px;
-    padding: 30px 15px;
+.newfoot {
+    margin-top: 40px;
     text-align: center;
 }
 
-.feature-box img {
+.soi {
+    border-right: 1px solid #eee;
+}
+
+.newfoot img {
     margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
 
-.feature-box:hover img {
+.newfoot img:hover {
     transform: scale(1.1);
 }
 
-.feature-box h3 {
+.newfoot h3 {
     font-size: 20px;
     font-weight: 600;
     color: #333;
     margin-bottom: 15px;
 }
 
-.feature-box p {
+.newfoot p {
     font-size: 16px;
     line-height: 1.5;
     color: #666;
+}
+
+.newfootnom {
+    margin-bottom: 0;
 }
 
 /* Animation Classes */
@@ -84,19 +122,35 @@
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .feature-box {
-        flex: 0 0 50%;
+    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-10, .col-lg-12 {
+        width: 100%;
+    }
+    
+    .soi {
+        border-right: none;
+    }
+    
+    .newfoot [class*="col-lg-3"] {
+        width: 50%;
         margin-bottom: 30px;
     }
 }
 
 @media (max-width: 576px) {
-    .feature-box {
-        flex: 0 0 100%;
+    .newfoot [class*="col-lg-3"] {
+        width: 100%;
     }
     
-    .royalti-description {
+    .nextfootp {
         font-size: 16px;
         padding: 0 15px;
+    }
+    
+    .col-xs-6 {
+        width: 50%;
+    }
+    
+    .col-xs-12 {
+        width: 100%;
     }
 }
