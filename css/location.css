@@ -1,160 +1,221 @@
 /* Location Section Styles */
 .location {
-    background: var(--light-bg);
-    padding: 100px 0;
+    background: linear-gradient(to bottom, #f8f9fa, #fff);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.location::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
+}
+
+.location h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #333;
+    position: relative;
+    font-weight: 600;
+}
+
+.location h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 20px auto 0;
+    border-radius: 2px;
 }
 
 .location-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 60px;
     margin-top: 50px;
-}
-
-.location-map {
-    width: 100%;
-    height: 400px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.location-map iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+    align-items: start;
 }
 
 .location-info {
-    padding-right: 30px;
-}
-
-.location-info h3 {
-    color: var(--primary-color);
-    margin-bottom: 30px;
-    font-size: 1.8rem;
-}
-
-.location-advantages {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.advantage-item {
+    padding: 40px;
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: var(--transition);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.advantage-item:hover {
-    transform: translateX(10px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+.location-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.advantage-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--light-bg);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+.location-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
 }
 
-.advantage-icon img {
-    width: 25px;
-    height: 25px;
-}
-
-.advantage-text h4 {
-    color: var(--primary-color);
-    margin-bottom: 5px;
-    font-size: 1.1rem;
-}
-
-.advantage-text p {
-    color: var(--text-color);
-    font-size: 0.9rem;
+.location-features li {
+    position: relative;
+    padding: 15px 0 15px 35px;
+    margin-bottom: 10px;
+    font-size: 17px;
     line-height: 1.6;
+    color: #444;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.location-features li:last-child {
+    border-bottom: none;
+}
+
+.location-features li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.location-features li:hover {
+    color: var(--primary-color);
+    padding-left: 40px;
+}
+
+.location-features li:hover:before {
+    transform: translateY(-50%) scale(1.2);
+}
+
+.location-map {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.location-map:hover {
+    transform: scale(1.02);
+}
+
+.location-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.location-map:hover img {
+    transform: scale(1.05);
 }
 
 .location-cta {
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
 }
 
-.location-cta button {
-    background: var(--accent-color);
+.btn-location {
+    display: inline-block;
+    background: var(--primary-color);
     color: white;
-    padding: 12px 30px;
-    border-radius: 5px;
+    padding: 16px 40px;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: 600;
-    transition: var(--transition);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.location-cta button:hover {
-    background: var(--primary-color);
+.btn-location:hover {
+    background: var(--accent-color);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .location {
+        padding: 100px 0;
+    }
+    
+    .location h2 {
+        font-size: 36px;
+    }
+    
+    .location-features li {
+        font-size: 16px;
+    }
+}
+
 @media (max-width: 992px) {
     .location-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .location-info {
-        padding-right: 0;
-    }
-
     .location-map {
-        height: 350px;
+        height: 400px;
+    }
+    
+    .location-info {
+        padding: 30px;
     }
 }
 
 @media (max-width: 768px) {
     .location {
+        padding: 80px 0;
+    }
+
+    .location h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .location-map {
+        height: 350px;
+    }
+
+    .location-features li {
+        font-size: 15px;
+        padding: 12px 0 12px 30px;
+    }
+    
+    .btn-location {
+        padding: 14px 30px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .location {
         padding: 60px 0;
+    }
+
+    .location h2 {
+        font-size: 28px;
     }
 
     .location-map {
         height: 300px;
     }
-
-    .advantage-item {
-        padding: 15px;
-    }
-
-    .advantage-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .advantage-icon img {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .location-map {
-        height: 250px;
-    }
-
-    .advantage-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .advantage-text h4 {
-        font-size: 1rem;
+    
+    .location-info {
+        padding: 20px;
     }
 }
