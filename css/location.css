@@ -1,0 +1,160 @@
+/* Location Section Styles */
+.location {
+    background: var(--light-bg);
+    padding: 100px 0;
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.location-map {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.location-info {
+    padding-right: 30px;
+}
+
+.location-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.location-advantages {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.advantage-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition);
+}
+
+.advantage-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.advantage-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.advantage-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.advantage-text h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.advantage-text p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.location-cta {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.location-cta button {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.location-cta button:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .location-info {
+        padding-right: 0;
+    }
+
+    .location-map {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .location {
+        padding: 60px 0;
+    }
+
+    .location-map {
+        height: 300px;
+    }
+
+    .advantage-item {
+        padding: 15px;
+    }
+
+    .advantage-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .advantage-icon img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-map {
+        height: 250px;
+    }
+
+    .advantage-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advantage-text h4 {
+        font-size: 1rem;
+    }
+}

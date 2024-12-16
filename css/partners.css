@@ -1,0 +1,60 @@
+/* Partners Section Styles */
+.partners {
+    padding: 80px 0;
+    background: white;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.partner-item {
+    text-align: center;
+    padding: 30px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.partner-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.partner-logo {
+    width: 200px;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+.partner-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.partner-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.partner-info p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .partner-logo {
+        width: 150px;
+    }
+}
